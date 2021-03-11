@@ -13,6 +13,8 @@
 		CDD45E7A25FA4E2F00CED42D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD45E7825FA4E2F00CED42D /* Main.storyboard */; };
 		CDD45E7C25FA4E3000CED42D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD45E7B25FA4E3000CED42D /* Assets.xcassets */; };
 		CDD45E7F25FA4E3000CED42D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD45E7D25FA4E3000CED42D /* LaunchScreen.storyboard */; };
+		CDD45E8825FA58E300CED42D /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD45E8725FA58E300CED42D /* NoteTableViewController.swift */; };
+		CDD45E8B25FA590A00CED42D /* AddEditNoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD45E8A25FA590A00CED42D /* AddEditNoteTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CDD45E7B25FA4E3000CED42D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDD45E7E25FA4E3000CED42D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDD45E8025FA4E3000CED42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDD45E8725FA58E300CED42D /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
+		CDD45E8A25FA590A00CED42D /* AddEditNoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditNoteTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				CDD45E7425FA4E2F00CED42D /* SceneDelegate.swift */,
 				CDD45E7625FA4E2F00CED42D /* ViewController.swift */,
 				CDD45E7825FA4E2F00CED42D /* Main.storyboard */,
+				CDD45E8A25FA590A00CED42D /* AddEditNoteTableViewController.swift */,
+				CDD45E8725FA58E300CED42D /* NoteTableViewController.swift */,
 				CDD45E7B25FA4E3000CED42D /* Assets.xcassets */,
 				CDD45E7D25FA4E3000CED42D /* LaunchScreen.storyboard */,
 				CDD45E8025FA4E3000CED42D /* Info.plist */,
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDD45E7725FA4E2F00CED42D /* ViewController.swift in Sources */,
+				CDD45E8825FA58E300CED42D /* NoteTableViewController.swift in Sources */,
 				CDD45E7325FA4E2F00CED42D /* AppDelegate.swift in Sources */,
+				CDD45E8B25FA590A00CED42D /* AddEditNoteTableViewController.swift in Sources */,
 				CDD45E7525FA4E2F00CED42D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
