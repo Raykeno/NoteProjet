@@ -1,13 +1,19 @@
-//
-//  NoteTableViewController.swift
-//  NoteProjet
-//
-//  Created by user191413 on 3/11/21.
-//
-
 import UIKit
 
 class NoteTableViewController: UITableViewController {
+
+    let today = Date()
+    
+    var notes: [Note] = [
+        Note(name: "Aller au magasin", contenu: "Acheter un paquet de crayon pour la semaine prochaine",
+              date: today),
+        Note(name: "Nettoyer le casque VR", contenu: "Nettoyer le casque pour jouer demain",
+              date: today),
+        Note(name: "Ranger mes affaires", contenu: "J'ai besoin de ranger mes affaires pour mes prochaines vacances",
+              date: today),
+        Note(name: "Aller au véto pour le chat", contenu: "Le véto m'a demandée de venir le dimanche pour un examen pour mon chat",
+              date: today),
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,30 +22,39 @@ class NoteTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
+    
+    
+    
+    
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return notes.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath)
+        
+        let note = notes[indexPath.row]
+        
+        cell.textLabel?.text = "\(note.name)"
+        cell.detailTextLabel?.text = note.date
+        cell.showsReorderControl = true
+        
         return cell
     }
-    */
+    
+   /* override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    }*/
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -49,24 +64,27 @@ class NoteTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            notes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
-    /*
+    
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        let movedNote = notes.remove(at: fromIndexPath.row)
+        notes.insert(movedNote, at: to.row)
+        tableView.reloadData()
 
     }
-    */
+    
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -76,14 +94,43 @@ class NoteTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func unwindToEmojiTableView(segue: UIStoryboardSegue) {
+        
+        if segue.identifier == "SaveUnwind" {
+            let sourceVC = segue.source as! AddEditNoteTableViewController
+            
+            if let note = sourceVC.note {
+                if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                    // update
+                    notes[selectedIndexPath.row] = note
+                    tableView.reloadRows(at: [selectedIndexPath], with: .none)
+                } else { // insert
+                    let newIndexPath = IndexPath(row: notes.count, section: 0)
+                    notes.append(emoji)
+                    tableView.insertRows(at: [newIndexPath], with: .automatic)
+                    
+                }
+            }
+        }
+        
+        
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "EditEmoji" {
+            let indexPath = tableView.indexPathForSelectedRow!
+            let note = notes[indexPath.row]
+            let navigationController = segue.destination as! UINavigationController
+            let addEditController = navigationController.topViewController as! AddEditNoteTableViewController
+            addEditController.note = note
+            
+        }
+    }
+    
 
 }

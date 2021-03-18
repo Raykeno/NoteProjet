@@ -1,27 +1,40 @@
-//
-//  AddEditNoteTableViewController.swift
-//  NoteProjet
-//
-//  Created by user191413 on 3/11/21.
-//
-
 import UIKit
 
 class AddEditNoteTableViewController: UITableViewController {
-
+    
+    var note: Note?
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var contenuTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let note = note {
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+            nameTextField.text = note.name
+            contenuTextField.text = note.contenu
+        }
+        
+        updateSaveButtonState()
     }
+    
+    func updateSaveButtonState() {
+        let nameText = nameTextField.text ?? ""
+        let contenuText = contenuTextField.text ?? ""
+        
+        saveButton.isEnabled = !nameText.isEmpty && !contenuText.isEmpty && !dateText.isEmpty
+    }
+    
+    @IBAction func textEditingChanged(_ sender: UITextField) {
+        updateSaveButtonState()
+    }
+    
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    /*override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
     }
@@ -29,7 +42,7 @@ class AddEditNoteTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
-    }
+    }*/
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,7 +64,7 @@ class AddEditNoteTableViewController: UITableViewController {
 
     /*
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -76,14 +89,24 @@ class AddEditNoteTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "SaveUnwind" {
+            let name = nameTextField.text ?? ""
+            let contenu = contenuTextField.text ?? ""
+            let formatter = DateFormatter()
+            let today = Date()
+            formatter.dateFormat = "dd/mm/yyyy HH:mm"
+            let date = formatter.date(from: today)
+            
+            note = Note(name: name, contenu: contenu, date: date)
+        }
+        
     }
-    */
+    
 
 }
