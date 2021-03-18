@@ -16,7 +16,6 @@
 		CDD45E7F25FA4E3000CED42D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD45E7D25FA4E3000CED42D /* LaunchScreen.storyboard */; };
 		CDD45E8825FA58E300CED42D /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD45E8725FA58E300CED42D /* NoteTableViewController.swift */; };
 		CDD45E8B25FA590A00CED42D /* AddEditNoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD45E8A25FA590A00CED42D /* AddEditNoteTableViewController.swift */; };
-		F3B2E69025FA5A3000EDE9F9 /* NoteModele.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B2E68F25FA5A3000EDE9F9 /* NoteModele.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		CDD45E8025FA4E3000CED42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDD45E8725FA58E300CED42D /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
 		CDD45E8A25FA590A00CED42D /* AddEditNoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditNoteTableViewController.swift; sourceTree = "<group>"; };
-		F3B2E68F25FA5A3000EDE9F9 /* NoteModele.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModele.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +46,6 @@
 		CDD45E6625FA4E2F00CED42D = {
 			isa = PBXGroup;
 			children = (
-				F3B2E68F25FA5A3000EDE9F9 /* NoteModele.swift */,
 				CDD45E7125FA4E2F00CED42D /* NoteProjet */,
 				CDD45E7025FA4E2F00CED42D /* Products */,
 			);
@@ -155,7 +152,6 @@
 				CDD45E7325FA4E2F00CED42D /* AppDelegate.swift in Sources */,
 				CDD45E8B25FA590A00CED42D /* AddEditNoteTableViewController.swift in Sources */,
 				CDD45E7525FA4E2F00CED42D /* SceneDelegate.swift in Sources */,
-				F3B2E69025FA5A3000EDE9F9 /* NoteModele.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

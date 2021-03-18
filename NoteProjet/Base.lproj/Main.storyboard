@@ -9,7 +9,7 @@
         <!--Note-->
         <scene sceneID="7XE-HD-foO">
             <objects>
-                <tableViewController id="Pcc-ZI-adr" customClass="EmojiTableViewController" customModule="NoteProjet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Pcc-ZI-adr" customClass="NoteTableViewController" customModule="NoteProjet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AhL-Ao-1wK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,7 +63,7 @@
         <!--Root View Controller-->
         <scene sceneID="3zz-8h-fpz">
             <objects>
-                <tableViewController id="jdS-2a-WFj" customClass="AddEditEmojiTableViewController" customModule="NoteProjet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="jdS-2a-WFj" customClass="AddEditNoteTableViewController" customModule="NoteProjet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="76r-Pq-GxA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,12 +124,12 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="lHH-ab-dwc">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="MPN-IQ-VP3">
                             <connections>
-                                <segue destination="E9q-ue-bTY" kind="unwind" unwindAction="unwindToEmojiTableViewWithSegue:" id="Avw-cs-Wuk"/>
+                                <segue destination="E9q-ue-bTY" kind="unwind" unwindAction="unwindToNoteTableViewWithSegue:" id="Avw-cs-Wuk"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="KrC-BD-Ijm">
                             <connections>
-                                <segue destination="E9q-ue-bTY" kind="unwind" identifier="SaveUnwind" unwindAction="unwindToEmojiTableViewWithSegue:" id="SYf-Z0-31W"/>
+                                <segue destination="E9q-ue-bTY" kind="unwind" identifier="SaveUnwind" unwindAction="unwindToNoteTableViewWithSegue:" id="SYf-Z0-31W"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

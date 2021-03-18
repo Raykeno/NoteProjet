@@ -120,7 +120,7 @@ class NoteTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "EditEmoji" {
+        if segue.identifier == "EditNote" {
             let indexPath = tableView.indexPathForSelectedRow!
             let note = notes[indexPath.row]
             let navigationController = segue.destination as! UINavigationController
