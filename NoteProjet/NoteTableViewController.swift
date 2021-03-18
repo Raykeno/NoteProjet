@@ -1,18 +1,16 @@
 import UIKit
 
 class NoteTableViewController: UITableViewController {
-
-    let today = Date()
     
     var notes: [Note] = [
         Note(name: "Aller au magasin", contenu: "Acheter un paquet de crayon pour la semaine prochaine",
-              date: today),
+              date: "12/01/2021 14:05"),
         Note(name: "Nettoyer le casque VR", contenu: "Nettoyer le casque pour jouer demain",
-              date: today),
+              date: "23/02/2021 12:05"),
         Note(name: "Ranger mes affaires", contenu: "J'ai besoin de ranger mes affaires pour mes prochaines vacances",
-              date: today),
+              date: "24/02/2021 11:11"),
         Note(name: "Aller au véto pour le chat", contenu: "Le véto m'a demandée de venir le dimanche pour un examen pour mon chat",
-              date: today),
+              date: "06/03/2021 15:25"),
     ]
 
     override func viewDidLoad() {
@@ -110,7 +108,7 @@ class NoteTableViewController: UITableViewController {
                     tableView.reloadRows(at: [selectedIndexPath], with: .none)
                 } else { // insert
                     let newIndexPath = IndexPath(row: notes.count, section: 0)
-                    notes.append(emoji)
+                    notes.append(note)
                     tableView.insertRows(at: [newIndexPath], with: .automatic)
                     
                 }

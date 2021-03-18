@@ -24,7 +24,7 @@ class AddEditNoteTableViewController: UITableViewController {
         let nameText = nameTextField.text ?? ""
         let contenuText = contenuTextField.text ?? ""
         
-        saveButton.isEnabled = !nameText.isEmpty && !contenuText.isEmpty && !dateText.isEmpty
+        saveButton.isEnabled = !nameText.isEmpty && !contenuText.isEmpty
     }
     
     @IBAction func textEditingChanged(_ sender: UITextField) {
@@ -101,7 +101,7 @@ class AddEditNoteTableViewController: UITableViewController {
             let formatter = DateFormatter()
             let today = Date()
             formatter.dateFormat = "dd/mm/yyyy HH:mm"
-            let date = formatter.date(from: today)
+            let date = formatter.string(from: today)
             
             note = Note(name: name, contenu: contenu, date: date)
         }
