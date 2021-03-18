@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD3DF78E26036FA900A79EF7 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3DF78D26036FA900A79EF7 /* Note.swift */; };
 		CDD45E7325FA4E2F00CED42D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD45E7225FA4E2F00CED42D /* AppDelegate.swift */; };
 		CDD45E7525FA4E2F00CED42D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD45E7425FA4E2F00CED42D /* SceneDelegate.swift */; };
 		CDD45E7725FA4E2F00CED42D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD45E7625FA4E2F00CED42D /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD3DF78D26036FA900A79EF7 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		CDD45E6F25FA4E2F00CED42D /* NoteProjet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteProjet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD45E7225FA4E2F00CED42D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDD45E7425FA4E2F00CED42D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		CDD45E7125FA4E2F00CED42D /* NoteProjet */ = {
 			isa = PBXGroup;
 			children = (
+				CD3DF78D26036FA900A79EF7 /* Note.swift */,
 				CDD45E7225FA4E2F00CED42D /* AppDelegate.swift */,
 				CDD45E7425FA4E2F00CED42D /* SceneDelegate.swift */,
 				CDD45E7625FA4E2F00CED42D /* ViewController.swift */,
@@ -148,6 +151,7 @@
 			files = (
 				CDD45E7725FA4E2F00CED42D /* ViewController.swift in Sources */,
 				CDD45E8825FA58E300CED42D /* NoteTableViewController.swift in Sources */,
+				CD3DF78E26036FA900A79EF7 /* Note.swift in Sources */,
 				CDD45E7325FA4E2F00CED42D /* AppDelegate.swift in Sources */,
 				CDD45E8B25FA590A00CED42D /* AddEditNoteTableViewController.swift in Sources */,
 				CDD45E7525FA4E2F00CED42D /* SceneDelegate.swift in Sources */,
