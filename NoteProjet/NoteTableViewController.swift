@@ -43,7 +43,7 @@ class NoteTableViewController: UITableViewController {
         
         let note = notes[indexPath.row]
         
-        cell.textLabel?.text = "\(note.name)"
+        cell.textLabel?.text = note.name
         cell.detailTextLabel?.text = note.date
         cell.showsReorderControl = true
         
@@ -96,7 +96,7 @@ class NoteTableViewController: UITableViewController {
     // MARK: - Navigation
 
     
-    @IBAction func unwindToEmojiTableView(segue: UIStoryboardSegue) {
+    @IBAction func unwindToNoteTableView(segue: UIStoryboardSegue) {
         
         if segue.identifier == "SaveUnwind" {
             let sourceVC = segue.source as! AddEditNoteTableViewController
